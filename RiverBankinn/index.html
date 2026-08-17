@@ -1,0 +1,1522 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riverbankinn | Riverside Retreat in Chitwan</title>
+
+    <!-- Google Fonts: Cormorant Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons (for UI icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. DESIGN TOKENS & VARIABLES --- */
+        :root {
+            /* Colors */
+            --color-primary: #2C5F58;
+            /* Jungle Green */
+            --color-primary-dark: #1E423D;
+            --color-accent: #8A4B4B;
+            /* Tharu Terracotta */
+            --color-bg: #F9F8F4;
+            /* River Mist (Warm Off-white) */
+            --color-bg-alt: #F2EFE9;
+            /* Sand */
+            --color-surface: #FFFFFF;
+            --color-text-main: #2D2D2D;
+            /* Charcoal */
+            --color-text-muted: #666666;
+            /* Stone Grey */
+            --color-border: #E0DDD5;
+
+            /* Font Families */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Typography Scale - Desktop (Refined for Elegance) */
+            --text-h1-size: 4.2rem;
+            --text-h2-size: 3rem;
+            --text-h3-size: 2rem;
+            --text-h4-size: 0.85rem;
+            --text-body-size: 1.05rem;
+            --text-caption-size: 0.9rem;
+            --text-btn-size: 0.9rem;
+
+            /* Tracking (Letter Spacing) */
+            --tracking-tight: -0.02em;
+            /* H1 */
+            --tracking-slight: -0.01em;
+            /* H2 */
+            --tracking-wide: 0.12em;
+            /* Nav, Labels */
+            --tracking-btn: 0.1em;
+            /* Buttons */
+
+            /* Line Heights */
+            --lh-heading: 1.05;
+            /* H1 */
+            --lh-section: 1.15;
+            /* H2 */
+            --lh-sub: 1.25;
+            /* H3 */
+            --lh-ui: 1.4;
+            /* H4, Nav */
+            --lh-body: 1.75;
+            /* Body */
+
+            /* Weights */
+            --weight-regular: 400;
+            --weight-medium: 500;
+            --weight-semibold: 600;
+
+            /* Layout */
+            --container-width: 1300px;
+            /* Slightly wider for the large typography */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --shadow-soft: 0 4px 20px rgba(44, 95, 88, 0.08);
+        }
+
+        /* --- 2. RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-body-size);
+            font-weight: var(--weight-regular);
+            line-height: var(--lh-body);
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- 3. TYPOGRAPHY CLASSES --- */
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            font-family: var(--font-heading);
+            color: var(--color-text-main);
+        }
+
+        .h1 {
+            font-size: var(--text-h1-size);
+            font-weight: 600;
+            line-height: var(--lh-heading);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .h2 {
+            font-size: var(--text-h2-size);
+            font-weight: 600;
+            line-height: var(--lh-section);
+            letter-spacing: var(--tracking-slight);
+        }
+
+        .h3 {
+            font-size: var(--text-h3-size);
+            font-weight: 500;
+            line-height: var(--lh-sub);
+        }
+
+        .h4,
+        .overline {
+            font-family: var(--font-body);
+            font-size: var(--text-h4-size);
+            font-weight: 600;
+            line-height: var(--lh-ui);
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .body-strong {
+            font-weight: 600;
+        }
+
+        .caption {
+            font-size: var(--text-caption-size);
+            color: var(--color-text-muted);
+            line-height: 1.45;
+        }
+
+        /* --- 4. UI COMPONENTS --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            font-family: var(--font-body);
+            font-size: var(--text-btn-size);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: var(--tracking-btn);
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(44, 95, 88, 0.25);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--color-text-main);
+        }
+
+        .btn-text {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .btn-text:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- 5. HEADER & NAV (Luxury Hotel Design) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(246, 242, 235, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(224, 221, 213, 0.6);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background-color: rgba(246, 242, 235, 0.98);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+        }
+
+        /* Logo - Refined Serif */
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #2C2A28;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #205A4B;
+        }
+
+        /* Navigation Links - Centered with Generous Spacing */
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Nav Items - Minimal Luxury Typography */
+        .nav-item {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #4A4A45;
+            position: relative;
+            transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #205A4B;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover {
+            color: #2C2A28;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        /* CTA Wrapper */
+        .nav-cta-wrapper {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Premium CTA Button */
+        .nav-cta-desktop {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background-color: #205A4B;
+            padding: 0.7rem 1.6rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(32, 90, 75, 0.15);
+        }
+
+        .nav-cta-desktop:hover {
+            background-color: #1A4A3D;
+            box-shadow: 0 4px 16px rgba(32, 90, 75, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2C2A28;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-toggle:hover {
+            color: #205A4B;
+        }
+
+        /* --- 6. HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4));
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 850px;
+            padding: 1.5rem;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero-overline {
+            display: block;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.2em;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.65;
+        }
+
+        /* --- 7. USP / FEATURES --- */
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .usp-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--color-surface);
+        }
+
+        .usp-card:hover {
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-5px);
+            border-color: transparent;
+        }
+
+        .usp-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* --- 8. ROOMS SECTION --- */
+        .rooms-section {
+            background-color: var(--color-bg-alt);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .room-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .room-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(44, 95, 88, 0.15);
+        }
+
+        .room-img-wrap {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .room-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .room-card:hover .room-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .room-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .room-content h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .room-content p {
+            margin-bottom: 2rem;
+            color: var(--color-text-muted);
+        }
+
+        .room-content .btn-text {
+            margin-top: auto;
+        }
+
+        /* --- 9. EXPERIENCES (Split Layout) --- */
+        .exp-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .exp-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-row.reverse {
+            direction: rtl;
+        }
+
+        .exp-row.reverse .exp-content {
+            direction: ltr;
+        }
+
+        .exp-img-wrap {
+            height: 450px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .exp-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exp-content h3 {
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .exp-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- 10. GALLERY SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            grid-auto-rows: 250px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+
+        /* --- 11. TESTIMONIALS --- */
+        .reviews-section {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 7rem 0;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            color: white;
+        }
+
+        .reviews-section p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .review-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            max-width: 450px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .review-stars {
+            color: #E0C097;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-family: var(--font-heading);
+        }
+
+        .review-author {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* --- 11. FOOTER --- */
+        footer {
+            background-color: var(--color-bg-alt);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: var(--color-text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- 12. ANIMATION & RESPONSIVE --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .exp-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .exp-row.reverse {
+                direction: ltr;
+            }
+
+            .exp-img-wrap {
+                height: 350px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --text-h1-size: 3rem;
+                --text-h2-size: 2.4rem;
+                --text-h3-size: 1.7rem;
+                --text-h4-size: 0.85rem;
+                --text-body-size: 1.05rem;
+            }
+
+            nav {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(246, 242, 235, 0.98);
+                flex-direction: column;
+                padding: 2rem 1.5rem;
+                gap: 1.8rem;
+                border-bottom: 1px solid rgba(224, 221, 213, 0.8);
+                display: none;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+                transform: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-item {
+                font-size: 0.75rem;
+                letter-spacing: 0.14em;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-cta-desktop {
+                display: none;
+            }
+
+            .hero h1 {
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+        }
+
+        /* --- 10. GALLERY SECTION (MARQUEE) --- */
+        .gallery-section {
+            overflow: hidden;
+            padding: 5rem 0;
+            background-color: #fcfbf9;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            position: relative;
+            padding-bottom: 0.5rem;
+            /* Scrollbar specific */
+            scrollbar-width: thin;
+            scrollbar-color: #205A4B #E0DDD5;
+            cursor: grab;
+        }
+
+        /* Webkit scrollbar styling */
+        .marquee-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .marquee-container::-webkit-scrollbar-track {
+            background: #E0DDD5;
+            border-radius: 4px;
+        }
+
+        .marquee-container::-webkit-scrollbar-thumb {
+            background-color: #205A4B;
+            border-radius: 4px;
+            border: 1px solid #E0DDD5;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            gap: 1.5rem;
+            /* No CSS animation, JS driven */
+        }
+
+        .gallery-img {
+            height: 400px;
+            width: auto;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s ease;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* --- 11. TESTIMONIAL SLIDER (MINIMALIST) --- */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 1rem auto 1rem auto;
+            position: relative;
+            text-align: left;
+        }
+
+        .testimonial-slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .testimonial-slide.active {
+            display: flex;
+            opacity: 1;
+            animation: fadeInSimple 0.8s ease-out;
+        }
+
+        @keyframes fadeInSimple {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonial-content {
+            width: 100%;
+        }
+
+        .testimonial-author-name {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.1rem;
+        }
+
+        .testimonial-location {
+            text-transform: none;
+            font-size: 0.95rem;
+            letter-spacing: normal;
+            color: #777;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars {
+            color: #F4B400;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-stars span {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #2D2D2D;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            position: relative;
+            max-width: 720px;
+        }
+
+        .accent-bar {
+            width: 80px;
+            height: 4px;
+            background-color: #24C676;
+            /* Vibrant green as per ref */
+            margin-top: 1rem;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: flex-start;
+            gap: 0.75rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background-color: #205A4B;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-quote {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .gallery-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Riverbankinn.</a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-item">Home</a>
+                    <a href="#rooms" class="nav-item">Rooms</a>
+                    <a href="#experiences" class="nav-item">Experiences</a>
+                    <a href="#gallery" class="nav-item">Gallery</a>
+                    <a href="#location" class="nav-item">Location</a>
+                    <a href="#contact" class="nav-item">Contact</a>
+                </div>
+                <div class="nav-cta-wrapper" style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="#book" class="btn btn-primary nav-cta-desktop">Book Your Stay</a>
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="hero-slider" id="heroSlider">
+                <div class="slide active"
+                    style="background-image: url('https://picsum.photos/seed/riverbankinn_hero_v2/1920/1080');"></div>
+                <!-- Alternate nature/luxury images -->
+                <div class="slide" style="background-image: url('https://picsum.photos/id/28/1920/1080');"></div>
+                <div class="slide" style="background-image: url('https://picsum.photos/id/16/1920/1080');"></div>
+            </div>
+
+            <div class="hero-content">
+                <span class="overline hero-overline">Sauraha, Chitwan</span>
+                <h1 class="h1">Where the Jungle Greets the River</h1>
+                <p>Experience the serenity of the Rapti from a boutique riverside retreat. Luxury comfort meets the wild
+                    heart of Chitwan.</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#book" class="btn btn-primary">Book Your Stay</a>
+                    <a href="#rooms" class="btn btn-outline">View Rooms</a>
+                </div>
+            </div>
+
+            <div class="slider-dots" id="sliderDots">
+                <div class="dot active" data-slide="0"></div>
+                <div class="dot" data-slide="1"></div>
+                <div class="dot" data-slide="2"></div>
+            </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h4 class="overline">Our Philosophy</h4>
+                    <h2 class="h2">The Riverbank Experience</h2>
+                </div>
+                <div class="usp-grid">
+                    <div class="usp-card">
+                        <i class="ri-water-flash-line usp-icon"></i>
+                        <h3 class="h3">Riverside Tranquility</h3>
+                        <p>Wake up to the sounds of the Rapti River flowing just steps from your room.</p>
+                    </div>
+                    <div class="usp-card">
+                        <i class="ri-plant-line usp-icon"></i>
+                        <h3 class="h3">Jungle Access</h3>
+                        <p>Located minutes from the Chitwan National Park entrance for immediate safari adventures.</p>
+                    </div>
+                    <div class="usp-card">
+                        <i class="ri-vip-diamond-line usp-icon"></i>
+                        <h3 class="h3">Tharu Heritage</h3>
+                        <p>Immerse yourself in local culture with our traditional architecture and warm hospitality.</p>
+                    </div>
+                    <div class="usp-card">
+                        <i class="ri-hotel-bed-line usp-icon"></i>
+                        <h3 class="h3">Organic Comfort</h3>
+                        <p>Minimal rooms designed with natural wood and linen for a restorative stay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Rooms -->
+        <section id="rooms" class="section-padding rooms-section">
+            <div class="container">
+                <div class="section-header">
+                    <h4 class="overline">Accommodation</h4>
+                    <h2 class="h2">Stay in Comfort</h2>
+                    <p class="caption">Minimalist elegance with the raw beauty of nature just outside your window.</p>
+                </div>
+                <div class="rooms-grid">
+                    <!-- Room 1 -->
+                    <article class="room-card">
+                        <div class="room-img-wrap">
+                            <img src="https://picsum.photos/seed/riverbankroom_deluxe/600/500"
+                                alt="Deluxe Riverside Room">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="h3">Deluxe Riverside</h3>
+                            <p>Unobstructed views of the river and morning mist. Perfect for couples seeking peace.</p>
+                            <a href="#" class="btn-text">View Details</a>
+                        </div>
+                    </article>
+                    <!-- Room 2 -->
+                    <article class="room-card">
+                        <div class="room-img-wrap">
+                            <img src="https://picsum.photos/seed/riverbankroom_garden/600/500" alt="Garden Suite">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="h3">Garden Suite</h3>
+                            <p>Tucked away in lush greenery for ultimate privacy and quiet.</p>
+                            <a href="#" class="btn-text">View Details</a>
+                        </div>
+                    </article>
+                    <!-- Room 3 -->
+                    <article class="room-card">
+                        <div class="room-img-wrap">
+                            <img src="https://picsum.photos/seed/riverbankroom_family/600/500" alt="Family Cottage">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="h3">Family Cottage</h3>
+                            <p>Spacious, standalone comfort for families exploring the wild together.</p>
+                            <a href="#" class="btn-text">View Details</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiences -->
+        <section id="experiences" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h4 class="overline">Discover</h4>
+                    <h2 class="h2">Curated Experiences</h2>
+                </div>
+
+                <!-- Row 1 -->
+                <div class="exp-row">
+                    <div class="exp-content">
+                        <h3 class="h3">Jungle Safari</h3>
+                        <p>Venture deep into the grasslands of Chitwan National Park in a guided 4x4 jeep. Spot the
+                            majestic One-Horned Rhinoceros and the elusive Royal Bengal Tiger in their natural habitat.
+                        </p>
+                        <a href="#" class="btn-text">Learn More</a>
+                    </div>
+                    <div class="exp-img-wrap">
+                        <img src="Images/Jungle-Safari.jpg" alt="Jeep Safari">
+                    </div>
+                </div>
+
+                <!-- Row 2 Reverse -->
+                <div class="exp-row reverse">
+                    <div class="exp-content">
+                        <h3 class="h3">Sunset Canoe Ride</h3>
+                        <p>Drift silently down the Rapti River at dusk. Watch crocodiles bask on the riverbanks and
+                            flocks of birds return to the canopy as the sun sets behind the jungle.</p>
+                        <a href="#" class="btn-text">Book a Canoe</a>
+                    </div>
+                    <div class="exp-img-wrap">
+                        <img src="Images/canoe.jpg" alt="Sunset Canoe">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="exp-row">
+                    <div class="exp-content">
+                        <h3 class="h3">Tharu Cultural Evening</h3>
+                        <p>Experience the vibrant culture of the indigenous Tharu people. Enjoy the mesmerizing stick
+                            dance and traditional folk music performed by local community members under the stars.</p>
+                        <a href="#" class="btn-text">View Schedule</a>
+                    </div>
+                    <div class="exp-img-wrap">
+                        <img src="Images/Tharu-Culture.jpg" alt="Tharu Dance">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery (Auto-Scrolling Marquee) -->
+        <section id="gallery" class="gallery-section">
+            <div class="container" style="margin-bottom: 3rem;">
+                <div class="section-header">
+                    <h4 class="overline">Visual Journey</h4>
+                    <h2 class="h2">Glimpses of Serenity</h2>
+                </div>
+            </div>
+
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <!-- IMAGE SET 1 -->
+                    <img src="https://picsum.photos/seed/riverbankroom/800/600" class="gallery-img" alt="Luxury Room">
+                    <img src="https://picsum.photos/seed/riverbankpool/600/600" class="gallery-img" alt="Poolside">
+                    <img src="https://picsum.photos/seed/riverbankfood/600/600" class="gallery-img" alt="Fine Dining">
+                    <img src="https://picsum.photos/seed/riverbankview/800/400" class="gallery-img" alt="River View">
+                    <img src="https://picsum.photos/seed/riverbankart/400/800" class="gallery-img" alt="Local Art">
+                    <img src="https://picsum.photos/seed/riverbankspa/600/600" class="gallery-img" alt="Spa Detail">
+                    <img src="https://picsum.photos/seed/riverbanknight/800/600" class="gallery-img" alt="Night View">
+                    <img src="https://picsum.photos/seed/riverbanklobby/800/600" class="gallery-img" alt="Lobby">
+
+                    <!-- IMAGE SET 2 (Duplicate for Seamless Loop) -->
+                    <img src="https://picsum.photos/seed/riverbankroom/800/600" class="gallery-img" alt="Luxury Room">
+                    <img src="https://picsum.photos/seed/riverbankpool/600/600" class="gallery-img" alt="Poolside">
+                    <img src="https://picsum.photos/seed/riverbankfood/600/600" class="gallery-img" alt="Fine Dining">
+                    <img src="https://picsum.photos/seed/riverbankview/800/400" class="gallery-img" alt="River View">
+                    <img src="https://picsum.photos/seed/riverbankart/400/800" class="gallery-img" alt="Local Art">
+                    <img src="https://picsum.photos/seed/riverbankspa/600/600" class="gallery-img" alt="Spa Detail">
+                    <img src="https://picsum.photos/seed/riverbanknight/800/600" class="gallery-img" alt="Night View">
+                    <img src="https://picsum.photos/seed/riverbanklobby/800/600" class="gallery-img" alt="Lobby">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials (Minimalist) -->
+        <section class="reviews-section" style="background-color: #fcfbf9; padding: 4rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h4 class="overline">Guest Stories</h4>
+                    <h2 class="h2" style="color: #2D2D2D;">What Our Travelers Say</h2>
+                    <p class="caption">Real experiences from real people who've discovered the magic of Nepal with us
+                    </p>
+                </div>
+                <div class="testimonial-slider">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-author-name">Elena & Marco</div>
+                        <div class="testimonial-location">Italy</div>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(5/5)</span></div>
+                        <blockquote class="testimonial-quote">
+                            "We stayed in the River View suite and I honestly didn't want to leave. Waking up to the
+                            mist over the Rapti river was magical. The staff arranged a private dinner that was the
+                            highlight of our trip."
+                        </blockquote>
+                        <div class="accent-bar"></div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-author-name">David Thorne</div>
+                        <div class="testimonial-location">Australia</div>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(5/5)</span></div>
+                        <blockquote class="testimonial-quote">
+                            "Finally, a hotel in Chitwan that understands modern luxury. No clutter, just beautiful
+                            design and silence. The bed was incredibly comfortable, and being able to walk to the river
+                            bank for sunset was perfect."
+                        </blockquote>
+                        <div class="accent-bar"></div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-author-name">Priya Sharma</div>
+                        <div class="testimonial-location">India</div>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(5/5)</span></div>
+                        <blockquote class="testimonial-quote">
+                            "The hospitality here is unmatched. From the welcome drink to the safari arrangements,
+                            everything was seamless. It feels like a private home rather than a hotel. Highly recommend
+                            the Tharu cultural show."
+                        </blockquote>
+                        <div class="accent-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Dot Navigation -->
+                <div class="testimonial-dots">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="margin-bottom: 1.5rem; display:block;">Riverbankinn.</a>
+                <p class="caption">A boutique riverside retreat in Sauraha, Chitwan. Where luxury meets the wild.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="#"><i class="ri-facebook-circle-line" style="font-size: 1.5rem;"></i></a>
+                    <a href="#"><i class="ri-instagram-line" style="font-size: 1.5rem;"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="h4">Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="h4">Contact</h4>
+                <ul class="footer-links">
+                    <li class="caption">Sauraha-2, Chitwan, Nepal</li>
+                    <li class="caption">+977 98XXXXXXXX</li>
+                    <li class="caption">hello@riverbankinn.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="h4">Newsletter</h4>
+                <p class="caption" style="margin-bottom: 1rem;">Subscribe for updates and special offers.</p>
+                <form onsubmit="event.preventDefault();" style="display: flex;">
+                    <input type="email" placeholder="Your Email"
+                        style="padding: 1rem; border: 1px solid #ccc; border-radius: var(--radius-sm) 0 0 var(--radius-sm); width: 100%; font-family: var(--font-body);">
+                    <button type="submit" class="btn btn-primary"
+                        style="border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem;"><i
+                            class="ri-arrow-right-line"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Riverbankinn. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const icon = mobileToggle.querySelector('i');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('ri-menu-line');
+                icon.classList.add('ri-close-line');
+            } else {
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
+            }
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
+            });
+        });
+
+        // Scroll behavior for header
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Hero Image Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+        }
+
+        function stopSlideShow() {
+            clearInterval(slideInterval);
+        }
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopSlideShow();
+                showSlide(index);
+                startSlideShow(); // Restart timer after manual click
+            });
+        });
+
+        // Start the slideshow
+        startSlideShow();
+
+
+
+
+
+
+
+
+
+
+        // --- HYBRID AUTO-SCROLL GALLERY ---
+        const galleryContainer = document.querySelector('.marquee-container');
+        let scrollSpeed = 1.5; // Increased speed as requested
+        let isPaused = false;
+        let animationId;
+
+        function autoScroll() {
+            if (!isPaused) {
+                // If we reach the end, seamless loop could be tricky with scrollbar.
+                // For "slide bar" usage, we usually just let it scroll to end or wrap manually.
+                // Here we essentially let it scroll. If it hits end, we can reset or stop.
+                // Let's create a ping-pong or just reset for infinite feel if desired, 
+                // but for a scrollbar, linear flow is best.
+
+                if (galleryContainer.scrollLeft >= (galleryContainer.scrollWidth - galleryContainer.clientWidth)) {
+                    // Reset to start for infinite loop feel, or stop. 
+                    // Users usually prefer infinite loop in galleries.
+                    galleryContainer.scrollLeft = 0;
+                } else {
+                    galleryContainer.scrollLeft += scrollSpeed;
+                }
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        }
+
+        // Pause on interaction
+        galleryContainer.addEventListener('mouseenter', () => isPaused = true);
+        galleryContainer.addEventListener('mouseleave', () => isPaused = false);
+        galleryContainer.addEventListener('touchstart', () => isPaused = true);
+        galleryContainer.addEventListener('touchend', () => {
+            // Optional: delay resume
+            setTimeout(() => isPaused = false, 1000);
+        });
+
+        // Start Auto Scroll
+        autoScroll();
+
+        // --- TESTIMONIAL SLIDER LOGIC ---
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        let testimonialAutoSlide;
+
+        function showTestimonial(index) {
+            // Hide all
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+
+            // Show active
+            testimonialSlides[index].classList.add('active');
+            testimonialDots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        function startTestimonialRotation() {
+            testimonialAutoSlide = setInterval(() => {
+                let next = (currentTestimonial + 1) % testimonialSlides.length;
+                showTestimonial(next);
+            }, 6000); // Rotate every 6 seconds
+        }
+
+        function stopTestimonialRotation() {
+            clearInterval(testimonialAutoSlide);
+        }
+
+        // Dot Click Event
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopTestimonialRotation();
+                showTestimonial(index);
+                startTestimonialRotation();
+            });
+        });
+
+        // Initialize Auto-rotation
+        startTestimonialRotation();
+
+        // Optional: Auto-rotate testimonials slowly (e.g., every 8s) if user isn't interacting
+        // setInterval(() => {
+        //     let next = (currentTestimonial + 1) % testimonialSlides.length;
+        //     showTestimonial(next);
+        // }, 8000);
+    </script>
+</body>
+
+</html>
