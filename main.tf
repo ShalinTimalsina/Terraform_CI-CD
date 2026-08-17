@@ -11,4 +11,12 @@ terraform {
 
     }
   }
+
+  backend "s3" {
+    
+  }
 }
+    
+  
+
+
