@@ -24,7 +24,11 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Terraform Init
-        run: terraform init
+        run: |
+          terraform init \
+            -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}" \
+            -backend-config="key=terraform/terraform.tfstate" \
+            -backend-config="region=${{ vars.AWS_REGION }}"
 
       - name: Terraform Destroy
         run: terraform destroy --auto-approve
