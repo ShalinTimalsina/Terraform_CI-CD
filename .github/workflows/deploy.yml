@@ -4,10 +4,17 @@ on:
     push: 
         branches:
             - main
+        paths: 
+            - "**.tf"
+            - ".terraform.lock.hcl"
+            - ".github/workflows/deploy.yml"
 
     pull_request:
       branches: 
         - main
+
+    workflow_dispatch: 
+    
 
 jobs:
     
@@ -45,7 +52,7 @@ jobs:
               run: terraform plan  ## updated
 
             - name: Terraform apply 
-              if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+              if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
               run: terraform apply --auto-approve
 
            
